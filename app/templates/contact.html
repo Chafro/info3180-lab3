@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+
+{% block main %} 
+
+<body>
+	<div id = "content">
+		<form method="POST" action="/contact">
+ 			{{ form.csrf_token }}
+ 			<div>
+ 				<label>{{ form.name.label }}</label>
+ 				{{ form.name(size=20) }}
+ 			</div>
+ 			<div>
+ 				<label>{{ form.email.label }}</label>
+ 				{{ form.email(size=20) }}
+ 			</div>
+ 			<div>
+ 				<label>{{ form.subject.label }}</label>
+ 				{{ form.subject(size=20) }}
+ 			</div>
+ 			<div>
+ 				<label>{{ form.message.label }}</label>
+ 				{{ form.message(size=40) }}
+ 			</div>
+
+
+ 			<button type="submit">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
+
+{% endblock %}.
