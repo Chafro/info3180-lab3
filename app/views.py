@@ -31,7 +31,7 @@ def about():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = MyForm()
-    if request.method == 'POST':
+    if request.method == 'POST' and form.validate_on_submit():
         name = form.name.data
         email = form.email.data
         subject = form.subject.data
